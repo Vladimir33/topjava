@@ -2,6 +2,8 @@ package ru.javawebinar.topjava.util;
 
 import ru.javawebinar.topjava.model.Meal;
 import ru.javawebinar.topjava.model.MealWithExceed;
+import ru.javawebinar.topjava.model.Role;
+import ru.javawebinar.topjava.model.User;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -10,10 +12,6 @@ import java.time.Month;
 import java.util.*;
 import java.util.stream.Collectors;
 
-/**
- * GKislin
- * 31.05.2015.
- */
 public class MealsUtil {
     public static final List<Meal> MEALS = Arrays.asList(
             new Meal(LocalDateTime.of(2015, Month.MAY, 30, 10, 0), "Завтрак", 500),
@@ -22,6 +20,12 @@ public class MealsUtil {
             new Meal(LocalDateTime.of(2015, Month.MAY, 31, 10, 0), "Завтрак", 1000),
             new Meal(LocalDateTime.of(2015, Month.MAY, 31, 13, 0), "Обед", 500),
             new Meal(LocalDateTime.of(2015, Month.MAY, 31, 20, 0), "Ужин", 510)
+    );
+
+    public static final List<User> USERS = Arrays.asList(
+            new User(1, "John", "mail", "pass", Role.ROLE_ADMIN),
+            new User(2, "Kate", "email", "password", Role.ROLE_USER),
+            new User(3, "Rick", "gmail", "password", Role.ROLE_USER)
     );
 
     public static final int DEFAULT_CALORIES_PER_DAY = 2000;

@@ -2,10 +2,6 @@ package ru.javawebinar.topjava;
 
 import ru.javawebinar.topjava.util.MealsUtil;
 
-/**
- * GKislin
- * 06.03.2015.
- */
 public class AuthorizedUser {
 
     public static int id() {
