@@ -1,3 +1,7 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/22f176c7738f4194bf79c8b63ad69629)](https://www.codacy.com/app/vod-vladimir33/topjava?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Vladimir33/topjava&amp;utm_campaign=Badge_Grade)
+[![Build Status](https://travis-ci.org/Vladimir33/topjava.svg?branch=master)](https://travis-ci.org/Vladimir33/topjava)
+[![Dependency Status](https://dependencyci.com/github/Vladimir33/topjava/badge)](https://dependencyci.com/github/Vladimir33/topjava)
+
 Java Enterprise Online Project 
 ===============================
 Наиболее востребованные технологии /инструменты / фреймворки Java Enterprise:
