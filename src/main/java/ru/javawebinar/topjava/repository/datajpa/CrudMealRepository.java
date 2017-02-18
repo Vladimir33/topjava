@@ -17,30 +17,18 @@ public interface CrudMealRepository extends JpaRepository<Meal, Integer> {
     @Transactional
     @Modifying
     @Query(name = Meal.DELETE)
-    int delete(@Param("id") int id);
+    int delete(@Param("id") int id, @Param("userId") int userId);
 
-//    @Transactional
-//    @Modifying
-//    @Query("update Meal m set m.dateTime=?1, m.calories=?2, m.description=?3 where m.user.id=:userId")
-//    Meal saveByUserId(Meal meal, @Param("userId") int userId);
-
-    @Override
     @Transactional
+    @Override
     Meal save(Meal meal);
 
-//    @Modifying
-//    @Query("select m from Meal m where m.id=:id")
-//    Meal findOne(@Param("id") int id);
-
-    @Query("SELECT m FROM Meal m JOIN FETCH m.user u WHERE u.id = :user_id AND m.id=:id ORDER BY m.dateTime DESC")
-    Meal getByIdWithUser(@Param("id")int id, @Param("user_id")int userId);
-
-//    @Override
-//    Meal findOne(Integer id);
-
+    @Query("SELECT m FROM Meal m JOIN FETCH m.user u WHERE u.id = ?2 AND m.id=?1 ORDER BY m.dateTime DESC")
+    Meal getByIdWithUser(int id, int userId);
 
     @Override
     List<Meal> findAll(Sort sort);
 
-    List<Meal> findBetweenAndUserIdIs(LocalDateTime startDate, LocalDateTime endDate, int userId);
+    @Query(name = Meal.GET_BETWEEN)
+    List<Meal> findBetween(@Param("startDate") LocalDateTime startDate, @Param("endDate") LocalDateTime endDate, @Param("userId") int userId);
 }
